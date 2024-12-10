@@ -53,7 +53,7 @@ const Productivity = () => {
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Left Options */}
         <div className="h-[400px] flex flex-col justify-between">
-          <div className="space-y-6">
+          <div className="space-y-6 overflow-hidden">
             {[
               {
                 title: "Designed for businesses of any scale",

@@ -1,6 +1,6 @@
-import Data1 from '../FakeData/Data1.json'
-import Data2 from '../FakeData/Data2.json';
-import { useEffect, useState } from 'react';
+import Data1 from "../FakeData/Data1.json";
+import Data2 from "../FakeData/Data2.json";
+import { useEffect, useState } from "react";
 
 const Global = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -16,42 +16,62 @@ const Global = () => {
     <div className="bg-gradient-to-b from-slate-50 to-blue-100 py-12">
       {/* Testimonials Section */}
       <div className="text-center">
-        <span className="text-3xl font-semibold text-blue-500">Global teams</span>
-        <span className="text-3xl font-semibold"> run their entire business on Lark</span>
+        <span className="text-3xl font-semibold text-blue-500">
+          Global teams
+        </span>
+        <span className="text-3xl font-semibold">
+          {" "}
+          run their entire business on Lark
+        </span>
         <div className="px-10 grid grid-cols-1 mt-16 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white p-6 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] 
+              hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 
+              border border-gray-100"
             >
               {/* Profile Picture and Text Row */}
-              <div className="flex items-center mb-4 pb-4 border-b border-gray-200">
+              <div className="flex items-center mb-6 pb-4 border-b border-gray-100">
                 <img
-                  src={testimonial.image || "https://example.com/default-profile.jpg"}
+                  src={
+                    testimonial.image ||
+                    "https://example.com/default-profile.jpg"
+                  }
                   alt={testimonial.title}
-                  className="w-16 h-16 rounded-full mr-4"
+                  className="w-16 h-16 rounded-full mr-4 object-cover border-2 border-gray-50"
                 />
                 <div>
-                  <h3 className="text-xl font-semibold mb-1">{testimonial.name}</h3>
-                  <p className="text-sm text-gray-600">{testimonial.title}</p>
+                  <h3 className="text-xl font-semibold mb-1 text-gray-800">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-sm text-gray-500">{testimonial.title}</p>
                 </div>
               </div>
 
               {/* Stats and Logo */}
-              <div className="mt-4 flex items-center justify-between">
+              <div className="mt-6 flex items-center justify-between">
                 <div>
-                  <p className="text-4xl text-blue-600 font-extrabold mb-1">{testimonial.stats}</p>
-                  <p className="text-gray-500 text-sm mb-4">{testimonial.subtitle}</p>
+                  <p className="text-4xl text-blue-600 font-extrabold mb-2">
+                    {testimonial.stats}
+                  </p>
+                  <p className="text-gray-500 text-sm mb-4">
+                    {testimonial.subtitle}
+                  </p>
                 </div>
                 <div>
                   <img
-                    src={testimonial.logo || "https://example.com/default-logo.jpg"}
+                    src={
+                      testimonial.logo || "https://example.com/default-logo.jpg"
+                    }
                     alt={`Logo for ${testimonial.stats}`}
-                    className="w-24 h-24 object-contain"
+                    className="w-24 h-24 object-contain opacity-90"
                   />
                 </div>
               </div>
-              <p className="text-gray-700">{testimonial.text}</p>
+              <p className="text-gray-600 leading-relaxed">
+                {testimonial.text}
+              </p>
             </div>
           ))}
         </div>
@@ -76,7 +96,7 @@ const Global = () => {
                   src={`https://logo.clearbit.com/${logo.toLowerCase()}.com`}
                   alt={logo}
                   className="h-12 mx-auto"
-                  onError={(e) => (e.target.src = '/path-to-default-logo.png')}
+                  onError={(e) => (e.target.src = "/path-to-default-logo.png")}
                 />
               </div>
             ))}
